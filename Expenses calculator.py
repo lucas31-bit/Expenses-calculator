@@ -9,7 +9,7 @@ import pandas as pd
 
 # Load the Excel file
 file_path = 'Wbwdata.xlsx'
-df = pd.read_excel(file_path, header=None, names=['Name', 'Value'])  # Replace 'your_file.xlsx' with your actual file path
+df = pd.read_excel(file_path, header=None, names=['Name', 'Value'])  
 
 # Display the contents of the DataFrame
 print(df)
@@ -18,7 +18,6 @@ print(df)
 owes = df[df['Value'] < 0].copy()
 owed = df[df['Value'] > 0].copy()
 
-# Convert values to absolute for easier matching
 owes['Value'] = owes['Value'].abs()
 
 # Prepare list to track transactions
