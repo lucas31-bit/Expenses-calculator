@@ -45,3 +45,21 @@ while i < len(owes) and j < len(owed):
 # Output the transactions
 for transaction in transactions:
     print(transaction)
+
+# Test function 
+def biggest_change(transactions):
+    if not transactions:
+        return None
+    if len(transactions) == 1:
+        return 0
+    differences = np.diff(transactions)
+    abs_differences = np.abs(differences)
+    return abs_differences.max()
+
+transactions = []
+result = biggest_change(transactions)
+assert result == None
+
+transactions = [1]
+result = biggest_change(transactions)
+assert result == 0
